@@ -62,9 +62,9 @@ def take_user_input():
         else:
             hour = datetime.now().hour
             if hour >= 21 and hour < 6:
-                speak("Good night sir, take care!")
+                speak("Good night uzma, take care!")
             else:
-                speak('Have a good day sir!')
+                speak('Have a good day uzma!')
             exit()
     except Exception:
         speak('Sorry, I could not understand. Could you please say that again?')
@@ -95,70 +95,70 @@ if __name__ == '__main__':
 
         elif 'ip address' in query:
             ip_address = find_my_ip()
-            speak(f'Your IP Address is {ip_address}.\n For your convenience, I am printing it on the screen sir.')
+            speak(f'Your IP Address is {ip_address}.\n For your convenience, I am printing it on the screen uzma.')
             print(f'Your IP Address is {ip_address}')
 
         elif 'wikipedia' in query:
-            speak('What do you want to search on Wikipedia, sir?')
+            speak('What do you want to search on Wikipedia, uzma?')
             search_query = take_user_input().lower()
             results = search_on_wikipedia(search_query)
             speak(f"According to Wikipedia, {results}")
-            speak("For your convenience, I am printing it on the screen sir.")
+            speak("For your convenience, I am printing it on the screen uzma.")
             print(results)
 
         elif 'youtube' in query:
-            speak('What do you want to play on Youtube, sir?')
+            speak('What do you want to play on Youtube, uzma?')
             video = take_user_input().lower()
             play_on_youtube(video)
 
         elif 'search on google' in query:
-            speak('What do you want to search on Google, sir?')
+            speak('What do you want to search on Google, uzma?')
             query = take_user_input().lower()
             search_on_google(query)
 
         elif "send whatsapp message" in query:
-            speak('On what number should I send the message sir? Please enter in the console: ')
+            speak('On what number should I send the message uzma? Please enter in the console: ')
             number = input("Enter the number: ")
-            speak("What is the message sir?")
+            speak("What is the message uzma?")
             message = take_user_input().lower()
             send_whatsapp_message(number, message)
-            speak("I've sent the message sir.")
+            speak("I've sent the message uzma.")
 
         elif "send an email" in query:
-            speak("On what email address do I send sir? Please enter in the console: ")
+            speak("On what email address do I send uzma? Please enter in the console: ")
             receiver_address = input("Enter email address: ")
-            speak("What should be the subject sir?")
+            speak("What should be the subject uzma?")
             subject = take_user_input().capitalize()
-            speak("What is the message sir?")
+            speak("What is the message uzma?")
             message = take_user_input().capitalize()
             if send_email(receiver_address, subject, message):
-                speak("I've sent the email sir.")
+                speak("I've sent the email uzma.")
             else:
-                speak("Something went wrong while I was sending the mail. Please check the error logs sir.")
+                speak("Something went wrong while I was sending the mail. Please check the error logs uzma.")
 
         elif 'joke' in query:
-            speak(f"Hope you like this one sir")
+            speak(f"Hope you like this one uzma")
             joke = get_random_joke()
             speak(joke)
-            speak("For your convenience, I am printing it on the screen sir.")
+            speak("For your convenience, I am printing it on the screen uzma.")
             pprint(joke)
 
         elif "advice" in query:
-            speak(f"Here's an advice for you, sir")
+            speak(f"Here's an advice for you, uzma")
             advice = get_random_advice()
             speak(advice)
-            speak("For your convenience, I am printing it on the screen sir.")
+            speak("For your convenience, I am printing it on the screen uzma.")
             pprint(advice)
 
         # elif "trending movies" in query:
         #     speak(f"Some of the trending movies are: {get_trending_movies()}")
-        #     speak("For your convenience, I am printing it on the screen sir.")
+        #     speak("For your convenience, I am printing it on the screen uzma.")
         #     print(*get_trending_movies(), sep='\n')
 
         elif 'news' in query:
-            speak(f"I'm reading out the latest news headlines, sir")
+            speak(f"I'm reading out the latest news headlines, uzma")
             speak(get_latest_news())
-            speak("For your convenience, I am printing it on the screen sir.")
+            speak("For your convenience, I am printing it on the screen uzma.")
             print(*get_latest_news(), sep='\n')
 
         elif 'weather' in query:
@@ -168,5 +168,5 @@ if __name__ == '__main__':
             weather, temperature, feels_like = get_weather_report(city)
             speak(f"The current temperature is {temperature}, but it feels like {feels_like}")
             speak(f"Also, the weather report talks about {weather}")
-            speak("For your convenience, I am printing it on the screen sir.")
+            speak("For your convenience, I am printing it on the screen uzma.")
             print(f"Description: {weather}\nTemperature: {temperature}\nFeels like: {feels_like}")
